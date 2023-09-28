@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "network" {
-  source = "../network"
+  source = "../"
 
   name        = var.name
   environment = "dev"

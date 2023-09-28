@@ -2,7 +2,7 @@ locals {
   public_ip_cidr_offset = 10
 
   derived_private_subnet_cidr = [for i in range(length(var.azs)) : cidrsubnet(var.cidr, 8, i)]
-  derived_public_subnet_cidr  = [for i in range(length(var.azs)) : cidrsubnet(var.cidr, 8, local.public_ip_cidr_offset+i)]
+  derived_public_subnet_cidr  = [for i in range(length(var.azs)) : cidrsubnet(var.cidr, 8, local.public_ip_cidr_offset + i)]
 }
 
 module "vpc" {
